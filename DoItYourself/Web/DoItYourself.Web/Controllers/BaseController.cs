@@ -1,9 +1,10 @@
 ﻿namespace DoItYourself.Web.Controllers
 {
     using System.Web.Mvc;
+
     using AutoMapper;
     using Infrastructure.Mapping;
-    using DoItYourself.Services.Web;
+    using Services.Web;
 
     public abstract class BaseController : Controller
     {

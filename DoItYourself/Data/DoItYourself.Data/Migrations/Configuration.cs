@@ -3,11 +3,12 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+    using DoItYourself.Common;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    using DoItYourself.Common;
-    using DoItYourself.Data.Models;
+    using Models;
 
     public sealed class Configuration : DbMigrationsConfiguration<DoItYourselfDbContext>
     {
@@ -20,7 +21,7 @@
         protected override void Seed(DoItYourselfDbContext context)
         {
             const string AdministratorUserName = "admin@admin.com";
-            const string AdministratorPassword = AdministratorUserName;
+            const string AdministratorPassword = "123456q";
 
             if (!context.Roles.Any())
             {

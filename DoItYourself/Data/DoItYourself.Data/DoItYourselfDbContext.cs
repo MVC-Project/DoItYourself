@@ -5,10 +5,8 @@
     using System.Linq;
 
     using Common.Models;
-
     using Microsoft.AspNet.Identity.EntityFramework;
-
-    using DoItYourself.Data.Models;
+    using Models;
 
     public class DoItYourselfDbContext : IdentityDbContext<User>
     {
@@ -16,6 +14,26 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Country> Countries { get; set; }
+
+        public IDbSet<Image> Images { get; set; }
+
+        public IDbSet<Location> Locations { get; set; }
+
+        public IDbSet<Project> Projects { get; set; }
+
+        public IDbSet<ProjectComment> ProjectComments { get; set; }
+
+        public IDbSet<Question> Questions { get; set; }
+
+        public IDbSet<QuestionComment> QuestionComments { get; set; }
+
+        public IDbSet<Rating> Ratings { get; set; }
+
+        public IDbSet<Video> Videos { get; set; }
 
         public static DoItYourselfDbContext Create()
         {
