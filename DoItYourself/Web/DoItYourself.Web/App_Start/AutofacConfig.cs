@@ -8,10 +8,9 @@
     using Autofac.Integration.Mvc;
 
     using Controllers;
-
     using Data;
     using Data.Common;
-    
+    using Services.Data.Contracts;
     using Services.Web;
 
     public static class AutofacConfig
@@ -52,6 +51,9 @@
             builder.Register(x => new HttpCacheService())
                 .As<ICacheService>()
                 .InstancePerRequest();
+
+            var servicesAssembly = Assembly.GetAssembly(typeof(IProjectService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))
