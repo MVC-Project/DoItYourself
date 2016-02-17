@@ -15,5 +15,9 @@
         void DeleteUser(User user);
 
         void HardDeleteUser(User user);
+
+        void DeleteUserById(object id);
+
+        void HardDeleteUserById(object id);
     }
 }

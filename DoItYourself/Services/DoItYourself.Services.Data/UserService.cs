@@ -33,11 +33,27 @@
         public void DeleteUser(User user)
         {
             this.users.Delete(user);
+            this.users.Save();
         }
 
         public void HardDeleteUser(User user)
         {
             this.users.HardDelete(user);
+            this.users.Save();
+        }
+
+        public void DeleteUserById(object id)
+        {
+            var user = this.users.GetById(id);
+            this.users.Delete(user);
+            this.users.Save();
+        }
+
+        public void HardDeleteUserById(object id)
+        {
+            var user = this.users.GetById(id);
+            this.users.HardDelete(user);
+            this.users.Save();
         }
     }
 }
