@@ -2,7 +2,7 @@
 {
     using System.Web.Mvc;
 
-    using DoItYourself.Common;
+    using DoItYourself.Common.Constants;
     using DoItYourself.Web.Controllers;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]

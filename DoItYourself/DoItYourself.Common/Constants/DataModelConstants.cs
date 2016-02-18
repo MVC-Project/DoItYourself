@@ -1,4 +1,4 @@
-﻿namespace DoItYourself.Common
+﻿namespace DoItYourself.Common.Constants
 {
     public class DataModelConstants
     {

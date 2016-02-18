@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModelConstants.cs" />
-    <Compile Include="GlobalConstants.cs" />
+    <Compile Include="Constants\DataModelConstants.cs" />
+    <Compile Include="Constants\GlobalConstants.cs" />
+    <Compile Include="ExtensionMethods\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

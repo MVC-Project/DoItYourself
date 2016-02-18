@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
 
     using Common.Models;
-    using DoItYourself.Common;
+    using DoItYourself.Common.Constants;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;

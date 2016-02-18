@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using Common.Models;
-    using DoItYourself.Common;
+    using DoItYourself.Common.Constants;
 
     public class Project : BaseModel<int>
     {

@@ -3,7 +3,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    using DoItYourself.Common;
+    using DoItYourself.Common.Constants;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;

@@ -4,7 +4,7 @@
 
     using Common.Models;
     using Contracts;
-    using DoItYourself.Common;
+    using DoItYourself.Common.Constants;
 
     public class ProjectComment : BaseModel<int>, IComment
     {

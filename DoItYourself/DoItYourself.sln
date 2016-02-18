@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoItYourself.Web.Controller
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoItYourself.Common", "DoItYourself.Common\DoItYourself.Common.csproj", "{701F322F-AA01-4DDC-90B6-6935981C1E73}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Upload", "Upload", "{89C71706-F1CC-4FD9-AE78-64019C33F548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoItYourself.CloudStorage.DropBox", "Upload\DoItYourself.CloudStorage.DropBox\DoItYourself.CloudStorage.DropBox.csproj", "{1CAA38C2-8CEA-4E1C-B3DB-F46967CEBA22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +87,10 @@ Global
 		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAA38C2-8CEA-4E1C-B3DB-F46967CEBA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAA38C2-8CEA-4E1C-B3DB-F46967CEBA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAA38C2-8CEA-4E1C-B3DB-F46967CEBA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAA38C2-8CEA-4E1C-B3DB-F46967CEBA22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,5 +106,6 @@ Global
 		{D0D962BD-363D-4A22-9DB1-53136CE8EBF4} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
 		{C3A300EF-D136-4334-9211-466B9E699339} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
 		{7C55353F-CB74-4E8E-B272-42DA1C9C2194} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
+		{1CAA38C2-8CEA-4E1C-B3DB-F46967CEBA22} = {89C71706-F1CC-4FD9-AE78-64019C33F548}
 	EndGlobalSection
 EndGlobal
