@@ -35,7 +35,7 @@
 
         public virtual Category Category { get; set; }
 
-        public virtual ICollection<QuestionComment> Comments
+        public virtual ICollection<QuestionComment> QuestionComment
         {
             get { return this.comments; }
             set { this.comments = value; }

@@ -77,7 +77,7 @@
         public IQueryable<Question> TopCommentedQuestions(int take = 6)
         {
             return this.questions.All()
-                .OrderByDescending(question => question.Comments.Count())
+                .OrderByDescending(question => question.QuestionComment.Count())
                 .Take(take);
         }
 
@@ -115,6 +115,12 @@
         {
             var question = this.questions.GetById(id);
             this.questions.HardDelete(question);
+            this.questions.Save();
+        }
+
+        public void AddQuestion(Question question)
+        {
+            this.questions.Add(question);
             this.questions.Save();
         }
     }

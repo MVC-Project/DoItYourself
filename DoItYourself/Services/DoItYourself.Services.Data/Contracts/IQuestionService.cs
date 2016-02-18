@@ -35,5 +35,7 @@
         void DeleteQuestionById(int id);
 
         void HardDeleteQuestionById(int id);
+
+        void AddQuestion(Question question);
     }
 }
