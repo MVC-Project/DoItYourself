@@ -61,9 +61,26 @@
             this.DbSet.Remove(entity);
         }
 
+        public void Update(T entity)
+        {
+            this.ChangeEntityState(entity, EntityState.Modified);
+        }
+
         public void Save()
         {
             this.Context.SaveChanges();
+        }
+
+        protected void ChangeEntityState(T entity, EntityState state)
+        {
+            var entry = this.Context.Entry(entity);
+
+            if (entry.State == EntityState.Detached)
+            {
+                this.DbSet.Attach(entity);
+            }
+
+            entry.State = state;
         }
     }
 }
