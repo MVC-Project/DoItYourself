@@ -12,7 +12,7 @@
     using Data.Common;
     using Services.Data.Contracts;
     using Services.Web;
-
+    using Infrastructure.Populator;
     public static class AutofacConfig
     {
         public static void RegisterAutofac()
@@ -50,6 +50,9 @@
                 .InstancePerRequest();
             builder.Register(x => new HttpCacheService())
                 .As<ICacheService>()
+                .InstancePerRequest();
+            builder.Register(x => new DropDownListPopulator())
+                .As<IDropDownListPopulator>()
                 .InstancePerRequest();
 
             var servicesAssembly = Assembly.GetAssembly(typeof(IProjectService));

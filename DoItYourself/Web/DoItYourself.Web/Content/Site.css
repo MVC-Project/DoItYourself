@@ -22,3 +22,34 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    height: 1px;
+    width: 279px;
+    height: 39px;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#upload-image {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    font-weight: bold !important;
+    padding-right: 15px !important;
+    margin-left: 15px !important;
+    width: 279px;
+    height: 37px;
+}

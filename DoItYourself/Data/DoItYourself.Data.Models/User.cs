@@ -25,7 +25,7 @@
             this.questionComments = new HashSet<QuestionComment>();
             this.questions = new HashSet<Question>();
             this.projects = new HashSet<Project>();
-            this.CreatedOn = DateTime.Now;
+            this.CreatedOn = DateTime.UtcNow;
         }
 
         [Required]

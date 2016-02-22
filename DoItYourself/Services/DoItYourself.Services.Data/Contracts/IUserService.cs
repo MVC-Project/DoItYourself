@@ -19,5 +19,7 @@
         void DeleteUserById(object id);
 
         void HardDeleteUserById(object id);
+
+        IQueryable<User> TopActiveUsers(int take = 5);
     }
 }

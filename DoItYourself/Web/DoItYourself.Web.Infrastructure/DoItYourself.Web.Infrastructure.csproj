@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,8 @@
     <Compile Include="Mapping\IMapFrom{T}.cs" />
     <Compile Include="Mapping\IMapTo{T}.cs" />
     <Compile Include="Mapping\QueryableExtensions.cs" />
+    <Compile Include="Populator\DropDownListPopulator.cs" />
+    <Compile Include="Populator\IDropDownListPopulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +68,24 @@
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\DoItYourself.Data.Common\DoItYourself.Data.Common.csproj">
+      <Project>{edfe3c57-ef5b-4636-9ecc-d0baca6b6379}</Project>
+      <Name>DoItYourself.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\DoItYourself.Data.Models\DoItYourself.Data.Models.csproj">
+      <Project>{048df115-fad9-4bd4-9ba0-d99dfd32a2b2}</Project>
+      <Name>DoItYourself.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\DoItYourself.Services.Data\DoItYourself.Services.Data.csproj">
+      <Project>{90fe4c4d-122a-406d-8a40-79c561fb8184}</Project>
+      <Name>DoItYourself.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\DoItYourself.Services.Web\DoItYourself.Services.Web.csproj">
+      <Project>{deab17a2-58c1-448c-8a66-d49c3af7fc6c}</Project>
+      <Name>DoItYourself.Services.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

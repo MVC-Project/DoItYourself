@@ -55,5 +55,12 @@
             this.users.HardDelete(user);
             this.users.Save();
         }
+
+        public IQueryable<User> TopActiveUsers(int take = 5)
+        {
+            return this.users.All()
+                .OrderByDescending(user => (user.ProjectComments.Count() + user.QuestionComments.Count()))
+                .Take(take);
+        }
     }
 }

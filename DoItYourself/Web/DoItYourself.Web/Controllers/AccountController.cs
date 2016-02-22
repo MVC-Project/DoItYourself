@@ -5,6 +5,7 @@
     using System.Web;
     using System.Web.Mvc;
 
+    using Common.Constants;
     using Data.Models;
 
     using Microsoft.AspNet.Identity;
@@ -12,7 +13,8 @@
     using Microsoft.Owin.Security;
 
     using ViewModels.Account;
-
+    using System;
+    using System.IO;
     [Authorize]
     public class AccountController : BaseController
     {
@@ -171,24 +173,60 @@
         {
             if (this.ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new User()
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Location = new Location()
+                    {
+                        City = model.City,
+                        CountryId = 32,
+                        CreatedOn = DateTime.Now
+                    }
+                };
+
+                if (model.ProfileImage != null)
+                {
+                    string filename = Path.GetFileName(model.ProfileImage.FileName);
+                    string folderPath = this.Server.MapPath(GlobalConstants.ImageFolderPathPrefix + user.Id);
+                    string imagePath = folderPath + "/" + filename;
+                    string imageUrl = GlobalConstants.ImageUrlPrefix + user.Id + "/" + filename;
+
+                    if (!Directory.Exists(folderPath))
+                    {
+                        DirectoryInfo directory = Directory.CreateDirectory(folderPath);
+                    }
+
+                    model.ProfileImage.SaveAs(imagePath);
+                    user.Image = new Image()
+                    {
+                        Path = imageUrl,
+                        CreatedOn = DateTime.Now
+                    };
+                }
+                else
+                {
+                    user.Image = new Image()
+                    {
+                        Path = GlobalConstants.DefaultUserPicture,
+                        CreatedOn = DateTime.Now
+                    };
+                }
+
                 var result = await this.UserManager.CreateAsync(user, model.Password);
+                this.UserManager.AddToRole(user.Id, GlobalConstants.UserRoleName);
+
                 if (result.Succeeded)
                 {
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     return this.RedirectToAction("Index", "Home");
                 }
 
                 this.AddErrors(result);
             }
 
-            // If we got this far, something failed, redisplay form
             return this.View(model);
         }
 
