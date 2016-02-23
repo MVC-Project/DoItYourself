@@ -1,4 +1,4 @@
-﻿namespace DoItYourself.Web.Controllers
+﻿namespace DoItYourself.Web.Controllers.Account
 {
     using System.Linq;
     using System.Threading.Tasks;

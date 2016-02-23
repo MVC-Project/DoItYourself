@@ -2,8 +2,8 @@
 {
     using System.Web.Mvc;
 
-    using DoItYourself.Common.Constants;
-    using DoItYourself.Web.Controllers;
+    using Common.Constants;
+    using Web.Controllers;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class AdministrationController : BaseController

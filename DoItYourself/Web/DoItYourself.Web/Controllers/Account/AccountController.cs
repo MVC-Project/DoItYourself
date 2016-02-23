@@ -1,5 +1,7 @@
-﻿namespace DoItYourself.Web.Controllers
+﻿namespace DoItYourself.Web.Controllers.Account
 {
+    using System;
+    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
@@ -13,8 +15,7 @@
     using Microsoft.Owin.Security;
 
     using ViewModels.Account;
-    using System;
-    using System.IO;
+
     [Authorize]
     public class AccountController : BaseController
     {
