@@ -60,6 +60,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CategoryServiceTests.cs" />
+    <Compile Include="CountryServiceTests.cs" />
+    <Compile Include="ImageServiceTests.cs" />
+    <Compile Include="LocationServiceTests.cs" />
+    <Compile Include="ProjectCommentServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
