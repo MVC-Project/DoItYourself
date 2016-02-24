@@ -25,4 +25,4 @@
 12.	Write at least 30 unit tests 
 13.	Apply error handling and data validation to avoid crashes when invalid data is entered (both client-side and server-side)
 14.	Prevent yourself from security holes (XSS, XSRF, Parameter Tampering, etc.)
-•	2 Branches
+15. 2 Branches
