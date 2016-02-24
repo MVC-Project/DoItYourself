@@ -5,6 +5,8 @@
 <p align="center"><a href="https://telerikacademy.com"><img src="https://raw.githubusercontent.com/MVC-Project/DoItYourself/master/2.png" /></a></p>
 <p align="center"><a href="https://telerikacademy.com"><img src="https://raw.githubusercontent.com/MVC-Project/DoItYourself/master/3.png" /></a></p>
 
+## Passed Requirements
+
 1. Use ASP.NET MVC and Visual Studio 2015 with Update 1
   - Have at least 15 controllers
   - Have at least 40 actions
