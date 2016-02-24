@@ -4,7 +4,12 @@
 
     public class ErrorController : Controller
     {
-        public ActionResult Index()
+        public ActionResult NotFound()
+        {
+            return this.View();
+        }
+
+        public ActionResult InternalServer()
         {
             return this.View();
         }

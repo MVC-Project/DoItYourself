@@ -222,10 +222,10 @@
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\Account\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
-    <Compile Include="Controllers\Project\ProjectCommentController.cs" />
-    <Compile Include="Controllers\Project\ProjectsController.cs" />
-    <Compile Include="Controllers\Question\QuestionCommentController.cs" />
-    <Compile Include="Controllers\Question\QuestionsController.cs" />
+    <Compile Include="Controllers\Projects\ProjectCommentController.cs" />
+    <Compile Include="Controllers\Projects\ProjectsController.cs" />
+    <Compile Include="Controllers\Questions\QuestionCommentController.cs" />
+    <Compile Include="Controllers\Questions\QuestionsController.cs" />
     <Compile Include="Controllers\Rating\RatingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +239,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Categories\ListCategoriesViewModel.cs" />
+    <Compile Include="ViewModels\Home\HomeIndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -249,6 +251,12 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Projects\AllProjectsViewModel.cs" />
+    <Compile Include="ViewModels\Projects\ProjectCreateViewModel.cs" />
+    <Compile Include="ViewModels\Projects\ProjectIndexViewModel.cs" />
+    <Compile Include="ViewModels\Questions\AllQuestionsViewModel.cs" />
+    <Compile Include="ViewModels\Questions\QuestionCreateViewModel.cs" />
+    <Compile Include="ViewModels\Questions\QuestionIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -442,6 +450,8 @@
     <Content Include="Views\Questions\Details.cshtml" />
     <Content Include="Views\Projects\Add.cshtml" />
     <Content Include="Views\Questions\Add.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\InternalServer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -457,9 +467,7 @@
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Administration\Views\UsersAdministration\" />
     <Folder Include="Areas\Administration\Views\VideosAdministration\" />
-    <Folder Include="ViewModels\Home\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Error\" />
     <Folder Include="Views\ProjectComment\" />
     <Folder Include="Views\QuestionComment\" />
     <Folder Include="Views\Rating\" />

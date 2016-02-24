@@ -1,4 +1,6 @@
-﻿<div class="row">
+﻿@model DoItYourself.Web.ViewModels.Home.HomeIndexViewModel
+
+<div class="row">
     <div style="width: 100%">
         <img src="http://i67.tinypic.com/160r9yr.png" style="width: 100%" />
     </div>
@@ -10,39 +12,24 @@
             The Newest Projects
         </h1>
     </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-bookmark-o"></i> Shower/Tub Wall Replacement</h4>
-            </div>
-            <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                <a href="#" class="btn btn-default">Learn More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-bookmark-o"></i> Kitchen Ceiling lighting</h4>
-            </div>
-            <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                <a href="#" class="btn btn-default">Learn More</a>
+    @foreach (var project in Model.Projects)
+    {
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-bookmark-o"></i>
+                     @project.Title.Substring(0, 20)...
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        @project.Content.Substring(0, 85)...
+                    </p>
+                    @Html.ActionLink("Lear More", "Details", "Projects", new { id = project.Id }, null)
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-bookmark-o"></i> 35 Amazing Outdoor Fireplaces</h4>
-            </div>
-            <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                <a href="#" class="btn btn-default">Learn More</a>
-            </div>
-        </div>
-    </div>
+    }
 </div>
 
 <div class="row">

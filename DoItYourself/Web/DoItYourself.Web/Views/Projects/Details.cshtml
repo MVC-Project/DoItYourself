@@ -1,7 +1,45 @@
-﻿@{
+﻿@model DoItYourself.Data.Models.Project
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>
-    Project Details Page
-</h1>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Projects
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="~/Projects/Index">Projects</a>
+            </li>
+            <li class="active">Details</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary text-center">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    @Model.Title.
+                </h3>
+            </div>
+            <div class="panel-body">
+                <img class="img-responsive img-hover center-block" src="@Model.Image.Path" />
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">@Model.Content</li>
+                <li class="list-group-item">@Model.Category.Name</li>
+                <li class="list-group-item">@Model.CreatedOn</li>
+                <li class="list-group-item">@Model.ProjectComments.Count() comments</li>
+                <li class="list-group-item">Author:
+                 @if (@Model.User == null)
+                { <span>Dimitar Dzhurenov</span> }
+                else { <span>@Model.User.UserName</span> }
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

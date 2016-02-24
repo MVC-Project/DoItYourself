@@ -503,7 +503,7 @@
                 return this.Redirect(returnUrl);
             }
 
-            return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("Home", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

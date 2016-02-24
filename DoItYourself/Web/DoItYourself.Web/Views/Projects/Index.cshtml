@@ -1,4 +1,6 @@
-﻿<div class="row">
+﻿@model DoItYourself.Web.ViewModels.Projects.ProjectIndexViewModel
+
+<div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
             Projects
@@ -9,97 +11,26 @@
             </li>
             <li class="active">Projects</li>
         </ol>
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            <div class="btn btn-warning pull-right" style="margin-bottom: 10px;">
+                <a href="~/Projects/Add">Add Project</a>
+            </div>
+        }
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
-    <div class="col-md-4 img-portfolio">
-        <a href="portfolio-item.html">
-            <img class="img-responsive img-hover" src="http://cimg1.ibsrv.net/cimg/www.doityourself.com/450x300_85/599/CRO_cars_main_car_buyingguide-21599.jpg" alt="">
-        </a>
-        <h3>
-            <a href="portfolio-item.html">Project Name</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-    </div>
+    @foreach (var project in Model.Projects)
+    {
+        <div class="col-md-4 img-portfolio">
+            <img class="img-responsive img-hover" src="@project.ImagePath" alt="">
+            <h3>
+                @Html.ActionLink((string)project.Title, "Details", "Projects", new { id = project.Id }, null)
+            </h3>
+            <p>@project.Content</p>
+        </div>
+    }
 </div>
 
 <hr>

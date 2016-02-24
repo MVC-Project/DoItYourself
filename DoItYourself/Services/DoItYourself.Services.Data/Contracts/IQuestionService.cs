@@ -18,6 +18,8 @@
 
         IQueryable<Question> AllQuestionsByUserId(string userId);
 
+        Question GetById(int id);
+
         IQueryable<Question> AllQuestionsByCategoryName(string categoryName);
 
         IQueryable<Question> AllQuestionsByCategoryId(int categoryId);

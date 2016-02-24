@@ -1,8 +1,8 @@
-﻿namespace DoItYourself.Web.Controllers.Project
+﻿namespace DoItYourself.Web.Controllers.Questions
 {
     using System.Web.Mvc;
 
-    public class ProjectCommentController : BaseController
+    public class QuestionCommentController : BaseController
     {
         public ActionResult Index()
         {
