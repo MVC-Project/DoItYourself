@@ -222,7 +222,7 @@
                 if (result.Succeeded)
                 {
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return this.RedirectToAction("Index", "Home");
+                    return this.RedirectToAction("Home", "Home");
                 }
 
                 this.AddErrors(result);
@@ -458,7 +458,7 @@
         public ActionResult LogOff()
         {
             this.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return this.RedirectToAction("Index", "Home");
+            return this.RedirectToAction("Home", "Home");
         }
 
         // GET: /Account/ExternalLoginFailure

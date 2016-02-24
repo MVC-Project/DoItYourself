@@ -20,7 +20,10 @@
                 .Include("~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap")
-                .Include("~/Scripts/bootstrap.js"));
+                .Include(
+                "~/Scripts/bootstrap.js",
+                "~/Content/bootstrap-theme/js/sb-admin-2.js",
+                "~/Content/bootstrap-theme/metisMenu/src/metisMenu.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/kendo")
                 .Include("~/Scripts/kendo/kendo.all.min.js", "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
@@ -33,6 +36,12 @@
 
             bundles.Add(new StyleBundle("~/Content/kendo/css")
                 .Include("~/Content/kendo/kendo.common-material.min.css", "~/Content/kendo/kendo.material.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/libs").Include(
+                      "~/Content/font-awesome/css/font-awesome.css",
+                      "~/Content/bootstrap-theme/css/sb-admin-2.css",
+                      "~/Content/bootstrap-theme/css/timeline.css",
+                      "~/Content/bootstrap-theme/metisMenu/src/metisMenu.css"));
         }
     }
 }

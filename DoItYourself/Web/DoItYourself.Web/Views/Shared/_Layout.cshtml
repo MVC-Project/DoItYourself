@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - DoItYourself</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/libs")
 </head>
-<body>
+<body style="background-color: #FFFFFF">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -15,13 +16,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("DoItYourself", "Index", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
+                @Html.ActionLink("DoItYourself", "Home", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Home", "Home", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Projects", "Index", "Projects", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Questions", "Index", "Questions", new { area = string.Empty }, null)</li>
                     <li>@Html.ActionLink("Аbout", "About", "Home", new { area = string.Empty }, null)</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Contacts", "Contacts", "Home", new { area = string.Empty }, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

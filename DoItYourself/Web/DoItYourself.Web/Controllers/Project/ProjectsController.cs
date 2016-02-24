@@ -8,5 +8,15 @@
         {
             return this.View();
         }
+
+        public ActionResult Details()
+        {
+            return this.View();
+        }
+
+        public ActionResult Add()
+        {
+            return this.View();
+        }
     }
 }

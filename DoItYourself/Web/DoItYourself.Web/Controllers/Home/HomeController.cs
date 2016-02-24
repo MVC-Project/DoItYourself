@@ -26,7 +26,7 @@
             return this.View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Contacts()
         {
             return this.View();
         }
